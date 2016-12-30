@@ -10,7 +10,7 @@ namespace _01Data.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Product> Categories { get; set; }
+        public ICollection<Product> Products { get; set; }
 
 
     }
