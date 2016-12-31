@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\DataContext.cs" />
     <Compile Include="Model\Product.cs" />

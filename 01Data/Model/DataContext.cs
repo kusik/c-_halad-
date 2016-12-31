@@ -12,7 +12,7 @@ namespace _01Data.Model
     {
 
         public DbSet<Product> Products { get; set; }
-        [Index(IsUnique = true)]
+        
         public  DbSet<Category> Categories { get; set; }
         
 
