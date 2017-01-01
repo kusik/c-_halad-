@@ -21,7 +21,7 @@ namespace _01Data.Model
         [MaxLength(127)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
-        
+       
         public ICollection<Product> Products { get; set; }
 
 

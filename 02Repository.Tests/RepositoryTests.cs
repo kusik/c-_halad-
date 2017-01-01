@@ -2,6 +2,8 @@
 using NUnit.Framework;
 using _01Data.Model;
 
+using System.Data.Entity.Infrastructure;
+
 namespace _02Repository.Tests
 {
     [TestFixture]
@@ -27,7 +29,7 @@ namespace _02Repository.Tests
         }
 
         [Test]
-        public void RepositoryTests_Catefory_DeletedCategoryShouldBeDisappearInRepo()
+        public void RepositoryTests_Category_DeletedCategoryShouldBeDisappearInRepo()
         {
             UnitOfWorks uow = new UnitOfWorks();
 
@@ -40,11 +42,12 @@ namespace _02Repository.Tests
         }
 
         [Test]
-        public void RepositoryTests_Catefory_UpdateCategoryShouldBeAppearInRepo()
+        public void RepositoryTests_Category_UpdateCategoryShouldBeAppearInRepo()
         {
             UnitOfWorks uow = new UnitOfWorks();
 
             var oldCat= uow.CategoryRepository.Find(2);
+            var oldName = oldCat.Name;
             string newName = "Nagyméretű memóriák";
 
             oldCat.Name = newName;
@@ -56,6 +59,31 @@ namespace _02Repository.Tests
             var newCat = uow.CategoryRepository.Find(2);
 
             Assert.AreEqual(newCat.Name, newName);
+
+            oldCat.Name = oldName;
+            uow.CategoryRepository.Update(oldCat);
+            uow.Save();
+        }
+
+        [Test]
+        public void RepositoryTests_Category_FindCategory()
+        {
+            UnitOfWorks uow = new UnitOfWorks();
+
+            var cat = uow.CategoryRepository.Find(1);
+
+            Assert.AreEqual(cat.Name, "Processzorok");
+        }
+
+        [Test]
+        public void RepositoryTests_Category_DeleteCategoryTrowException()
+        {
+            UnitOfWorks uow = new UnitOfWorks();
+
+            var cat = uow.CategoryRepository.Find(1);
+            uow.CategoryRepository.Delete(cat);
+
+            Assert.Throws<DbUpdateException>(uow.Save);
         }
     }
 }
