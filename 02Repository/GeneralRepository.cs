@@ -3,41 +3,42 @@ using System;
 
 namespace _02Repository
 {
-    public class CategoryRepository
+    public class GeneralRepository<TEntity>
+        where TEntity : class
     {
         private DataContext db;
 
-        public CategoryRepository(DataContext db)
+        public GeneralRepository(DataContext db)
         {
             this.db = db;
         }
 
-        public void Add(Category cat)
+        public void Add(TEntity cat)
         {
-           
-                db.Categories.Add(cat);
+
+            db.Set<TEntity>().Add(cat);
            
         }
 
-        public Category Find(int id)
+        public TEntity Find(params object[] keys)
         {
            
-               return db.Categories.Find(id);
+               return db.Set<TEntity>().Find(keys);
            
         }
 
-        public void Delete(Category cat)
+        public void Delete(TEntity cat)
         {
-            db.Categories.Remove(cat);
+            db.Set<TEntity>().Remove(cat);
         }
 
-        public void Update(Category oldCat)
+        public void Update(TEntity oldCat)
         {
             var entry = db.Entry(oldCat);
 
             if (entry.State==System.Data.Entity.EntityState.Detached)
             {
-                db.Set<Category>()
+                this.db.Set<TEntity>()
                     .Attach(oldCat);
 
             }

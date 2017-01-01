@@ -14,9 +14,11 @@ namespace _02Repository
         public UnitOfWorks()
         {
             db = new DataContext();
-            CategoryRepository = new CategoryRepository(db);
+            CategoryRepository = new GeneralRepository<Category>(db);
+            ProductRepository = new GeneralRepository<Product>(db);
         }
-        public CategoryRepository CategoryRepository { get; set; }
+        public GeneralRepository<Category> CategoryRepository { get; set; }
+        public GeneralRepository<Product> ProductRepository { get;  set; }
 
         public void Save()
         {

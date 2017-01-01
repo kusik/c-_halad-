@@ -7,7 +7,7 @@ using System.Data.Entity.Infrastructure;
 namespace _02Repository.Tests
 {
     [TestFixture]
-    public class RepositoryTests
+    public class CategoryRepositoryTests
     {
         [Test]
         public void RepositoryTests_Catefory_AddedCategoryShouldBeAppearInRepo()
