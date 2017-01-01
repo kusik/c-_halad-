@@ -36,6 +36,9 @@ namespace _01Data.Tests
 
             db.Categories.Add(cat);
 
+            cat = new Category() { Name = "Monitorok" };
+            db.Categories.Add(cat);
+
             db.SaveChanges();
 
 

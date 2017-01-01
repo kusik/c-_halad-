@@ -25,5 +25,24 @@ namespace _02Repository
                return db.Categories.Find(id);
            
         }
+
+        public void Delete(Category cat)
+        {
+            db.Categories.Remove(cat);
+        }
+
+        public void Update(Category oldCat)
+        {
+            var entry = db.Entry(oldCat);
+
+            if (entry.State==System.Data.Entity.EntityState.Detached)
+            {
+                db.Set<Category>()
+                    .Attach(oldCat);
+
+            }
+
+            db.Entry(oldCat).State = System.Data.Entity.EntityState.Modified;
+        }
     }
 }
