@@ -10,6 +10,12 @@ namespace _01Data.Model
 {
     public class Category
     {
+
+        public Category()
+        {
+            Products = new System.Collections.Generic.List < Product >();
+        }
+
         [Key]
         public int Id { get; set; }
         [MaxLength(127)]
