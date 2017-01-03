@@ -61,7 +61,7 @@ namespace _01Data.Tests
         #endregion
 
         [TestMethod]
-        public void DataTests_Categories_CountShouldBeEqualTo2()
+        public void DataTests_Categories_CountShouldBeEqualTo3()
         {
             //Act
             var db = new DataContext();
@@ -70,7 +70,7 @@ namespace _01Data.Tests
             var count = db.Categories.Count();
 
             // Asset
-            Assert.AreEqual(2, count);
+            Assert.AreEqual(3, count);
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace _01Data.Tests
 
                 try
                 {
-                    Assert.AreEqual(3, count);
+                    Assert.AreEqual(4, count);
                 }
                 finally
                 {

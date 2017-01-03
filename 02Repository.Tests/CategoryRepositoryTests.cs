@@ -1,16 +1,16 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using _01Data.Model;
 
 using System.Data.Entity.Infrastructure;
 
 namespace _02Repository.Tests
 {
+    [Category("Integration")] //ezt készit egy kategóriát a megadott névvel.   
     [TestFixture]
     public class CategoryRepositoryTests
     {
         [Test]
-        public void RepositoryTests_Catefory_AddedCategoryShouldBeAppearInRepo()
+        public void RepositoryTests_Category_AddedCategoryShouldBeAppearInRepo()
         {
 
             //todo: visszaállítani az adatbázist a végén
@@ -25,7 +25,7 @@ namespace _02Repository.Tests
             Assert.IsNotNull(newCat);
             Assert.AreEqual(cat.Name, newCat.Name);
 
-            uow.CategoryRepository.Delete(cat);
+            uow.CategoryRepository.Remove(cat);
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace _02Repository.Tests
             UnitOfWorks uow = new UnitOfWorks();
 
             var cat = uow.CategoryRepository.Find(3);
-            uow.CategoryRepository.Delete(cat);
+            uow.CategoryRepository.Remove(cat);
             uow.Save();
             var newCat = uow.CategoryRepository.Find(3);
 
@@ -81,7 +81,7 @@ namespace _02Repository.Tests
             UnitOfWorks uow = new UnitOfWorks();
 
             var cat = uow.CategoryRepository.Find(1);
-            uow.CategoryRepository.Delete(cat);
+            uow.CategoryRepository.Remove(cat);
 
             Assert.Throws<DbUpdateException>(uow.Save);
         }

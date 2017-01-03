@@ -27,7 +27,7 @@ namespace _02Repository
            
         }
 
-        public void Delete(TEntity cat)
+        public void Remove(TEntity cat)
         {
             db.Set<TEntity>().Remove(cat);
         }

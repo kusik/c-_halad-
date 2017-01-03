@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _01Data.Model
 {
-    public class Category
+    public class Category : MyBaseClassJustForId
     {
 
         public Category()
@@ -16,8 +16,6 @@ namespace _01Data.Model
             Products = new System.Collections.Generic.List < Product >();
         }
 
-        [Key]
-        public int Id { get; set; }
         [MaxLength(127)]
         [Index(IsUnique = true)]
         public string Name { get; set; }

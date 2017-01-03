@@ -1,11 +1,10 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using _01Data.Model;
-
-using System.Data.Entity.Infrastructure;
 
 namespace _02Repository.Tests
 {
+    [Category("Integration")] //ezt készit egy kategóriát a megadott névvel.   
+
     [TestFixture]
     public class ProductRepositoryTests
     {
@@ -25,7 +24,7 @@ namespace _02Repository.Tests
             Assert.IsNotNull(newprod);
             Assert.AreEqual(prod.Name, newprod.Name);
 
-            uow.ProductRepository.Delete(prod);
+            uow.ProductRepository.Remove(prod);
         }
 
         [Test]
@@ -34,7 +33,7 @@ namespace _02Repository.Tests
             UnitOfWorks uow = new UnitOfWorks();
 
             var prod = uow.ProductRepository.Find(3);
-            uow.ProductRepository.Delete(prod);
+            uow.ProductRepository.Remove(prod);
             uow.Save();
             var newprod = uow.ProductRepository.Find(3);
 

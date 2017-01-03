@@ -2,9 +2,10 @@
 
 namespace _01Data.Model
 {
-    public class Product
+    public class Product: MyBaseClassJustForId
+
     {
-        public int Id { get; set; }
+       
         public string Name { get; set; }
         public decimal Price { get; set; } 
         public Category Category { get; set; }
