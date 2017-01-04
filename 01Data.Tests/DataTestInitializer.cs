@@ -37,7 +37,7 @@ namespace _01Data.Tests
             db.SaveChanges();
 
 
-            //base.Seed(db);
+            base.Seed(db);
         }
 
     }
