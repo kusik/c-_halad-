@@ -1,19 +1,22 @@
 ﻿using _01Data.Model;
 using System;
+using System.Linq;
 
 namespace _02Repository
 {
     public class GeneralRepository<TEntity>
-        where TEntity : class
+        where TEntity : class, IMyBaseInterfaceJustForName
     {
         private DataContext db;
+
+        public GeneralRepository(){}
 
         public GeneralRepository(DataContext db)
         {
             this.db = db;
         }
 
-        public void Add(TEntity cat)
+        public virtual void Add(TEntity cat)
         {
 
             db.Set<TEntity>().Add(cat);
@@ -44,6 +47,11 @@ namespace _02Repository
             }
 
             db.Entry(oldCat).State = System.Data.Entity.EntityState.Modified;
+        }
+
+        public virtual bool IsExistByName(string name)
+        {
+            return db.Set<TEntity>().Any(e => e.Name == name);
         }
     }
 }

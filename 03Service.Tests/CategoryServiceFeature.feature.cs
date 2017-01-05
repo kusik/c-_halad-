@@ -19,6 +19,7 @@ namespace _03Service.Tests
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("CategoryService")]
+    [NUnit.Framework.CategoryAttribute("UnitTest")]
     public partial class CategoryServiceFeature
     {
         
@@ -32,7 +33,8 @@ namespace _03Service.Tests
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("hu-HU"), "CategoryService", "\tszükségem van egy olyan szervízre ami a Category adatok\r\n\teléréséért és rendelke" +
-                    "zésre bocsájtásáért felel.", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "zésre bocsájtásáért felel.", ProgrammingLanguage.CSharp, new string[] {
+                        "UnitTest"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -69,14 +71,14 @@ namespace _03Service.Tests
         public virtual void CategoryServiceAddFuggveny()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CategoryService Add függvény", ((string[])(null)));
-#line 4
-this.ScenarioSetup(scenarioInfo);
-#line 5
- testRunner.Given("a CategoryService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Adott ");
-#line 6
- testRunner.When("meghívom az Add függvényt ezekkel a paraméterekkel: \"egy új karegória neve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Ha ");
 #line 7
- testRunner.Then("létrejön az új kategória ezzel a névvel : \"egy új karegória neve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
+this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("a CategoryService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Adott ");
+#line 9
+ testRunner.When("meghívom az Add függvényt ezekkel a paraméterekkel: \'egy új karegória neve\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Ha ");
+#line 10
+ testRunner.Then("létrejön az új kategória ezzel a névvel : \'egy új karegória neve\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
 #line hidden
             this.ScenarioCleanup();
         }

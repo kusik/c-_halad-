@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _01Data.Model;
+using _02Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +10,24 @@ namespace _03Service
 {
     public class CategoryService
     {
-        public void Add(string name)
+        private UnitOfWorks uow;
+
+        public CategoryService(UnitOfWorks unitOfWorks)
         {
-            throw new NotImplementedException();
+            this.uow = unitOfWorks;
         }
 
-        public object GetByName(string name)
+        public  void Add(string name)
         {
-            throw new NotImplementedException();
+            uow.CategoryRepository.Add(new Category() { Name=name });
+            uow.Save();
+        }
+
+
+        public  bool IsExistGetByName(string name)
+        {
+            bool exist=uow.CategoryRepository.IsExistByName(name);
+            return exist;
         }
     }
 }

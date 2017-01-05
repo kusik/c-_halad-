@@ -55,7 +55,8 @@
   <ItemGroup>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\DataContext.cs" />
-    <Compile Include="Model\MyBaseClassJustForId.cs" />
+    <Compile Include="Model\IMyBaseInterfaceJustForName.cs" />
+    <Compile Include="Model\IMyBaseInterfaceJustForId.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
