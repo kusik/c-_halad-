@@ -76,7 +76,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.When("meghívom az Add függvényt ezekkel a paraméterekkel: \"egy új karegória neve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Ha ");
 #line 7
- testRunner.Then("létrejön az új kategória", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
+ testRunner.Then("létrejön az új kategória ezzel a névvel : \"egy új karegória neve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
 #line hidden
             this.ScenarioCleanup();
         }

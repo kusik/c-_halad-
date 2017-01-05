@@ -4,4 +4,4 @@
 Forgatókönyv: CategoryService Add függvény
 	Adott a CategoryService
 	Ha meghívom az Add függvényt ezekkel a paraméterekkel: "egy új karegória neve"
-	Akkor létrejön az új kategória
+	Akkor létrejön az új kategória ezzel a névvel : "egy új karegória neve"

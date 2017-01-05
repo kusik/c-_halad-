@@ -6,22 +6,25 @@ namespace _03Service.Tests
     [Binding]
     public class CategoryServiceSteps
     {
+        private CategoryService sut;
+
         [Given(@"a CategoryService")]
         public void AmennyibenACategoryService()
         {
-            ScenarioContext.Current.Pending();
+            sut = new CategoryService();
         }
-        
+
         [When(@"meghívom az Add függvényt ezekkel a paraméterekkel: ""(.*)""")]
-        public void MajdMeghivomAzAddFuggvenytEzekkelAParameterekkel(string p0)
+        public void MajdMeghivomAzAddFuggvenytEzekkelAParameterekkel(string name)
         {
-            ScenarioContext.Current.Pending();
+            sut.Add(name);
         }
         
-        [Then(@"létrejön az új kategória")]
-        public void AkkorLetrejonAzUjKategoria()
+        [Then(@"létrejön az új kategória ezzel a névvel : ""(.*)""")]
+        public void AkkorLetrejonAzUjKategoriaEzzelANevvel(string name)
         {
-            ScenarioContext.Current.Pending();
+            var newCat = sut.GetByName(name);
         }
+
     }
 }
