@@ -26,6 +26,20 @@ namespace _03Service.Tests
         public void AkkorLetrejonAzUjKategoriaEzzelANevvel(string p0)
         {
             Assert.IsTrue(sut.IsExistGetByName(p0));
-        }      
+        }
+
+        [When(@"meghívom a Find függvényt ezekkel a paraméterekkel: '(.*)'")]
+        public void MajdMeghivomAFindFuggvenytEzekkelAParameterekkel(int p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"megkapom a kért kategóriát")]
+        public void AkkorMegkapomAKertKategoriat()
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
+
+    
 }

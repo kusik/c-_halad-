@@ -1,5 +1,7 @@
-﻿using Nancy;
+﻿using _04WebApi.Model;
+using Nancy;
 using Nancy.Hosting.Self;
+using Nancy.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +31,12 @@ namespace _04WebApi
         public Utvalasztas()
         {
             Get["/"] = _ => "Hello world, here is Nancy!";
-        }
-        
-    }
 
+            Get["/Category/{Id}"] = x =>
+            {
+                var cat = this.Bind<CategoryViewModel>();
+                return Response.AsJson(cat);
+            };
+        }
+    }
 }

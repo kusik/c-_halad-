@@ -82,6 +82,23 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("CategoryService Find függvény")]
+        public virtual void CategoryServiceFindFuggveny()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CategoryService Find függvény", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
+ testRunner.Given("a CategoryService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Adott ");
+#line 14
+ testRunner.When("meghívom a Find függvényt ezekkel a paraméterekkel: \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Ha ");
+#line 15
+ testRunner.Then("megkapom a kért kategóriát", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

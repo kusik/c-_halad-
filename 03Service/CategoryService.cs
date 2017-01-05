@@ -29,5 +29,8 @@ namespace _03Service
             bool exist=uow.CategoryRepository.IsExistByName(name);
             return exist;
         }
+
+       
+
     }
 }
