@@ -19,7 +19,8 @@ namespace _03Service.Tests
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("CategoryService")]
-    [NUnit.Framework.CategoryAttribute("UnitTest")]
+    [NUnit.Framework.CategoryAttribute("Integration")]
+    [NUnit.Framework.CategoryAttribute("General")]
     public partial class CategoryServiceFeature
     {
         
@@ -34,7 +35,8 @@ namespace _03Service.Tests
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("hu-HU"), "CategoryService", "\tszükségem van egy olyan szervízre ami a Category adatok\r\n\teléréséért és rendelke" +
                     "zésre bocsájtásáért felel.", ProgrammingLanguage.CSharp, new string[] {
-                        "UnitTest"});
+                        "Integration",
+                        "General"});
             testRunner.OnFeatureStart(featureInfo);
         }
         

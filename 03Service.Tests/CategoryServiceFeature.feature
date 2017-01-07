@@ -1,6 +1,6 @@
-﻿#@Integration
-@UnitTest
-
+﻿@Integration
+#@UnitTest
+@General
 Jellemző: CategoryService
 	szükségem van egy olyan szervízre ami a Category adatok
 	eléréséért és rendelkezésre bocsájtásáért felel.

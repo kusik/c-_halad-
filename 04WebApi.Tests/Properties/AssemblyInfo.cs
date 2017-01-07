@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("04WebApi.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Coloplast")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("04WebApi.Tests")]
-[assembly: AssemblyCopyright("Copyright © Coloplast 2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fc78563a-683a-4ef5-811b-e74f4e19dc10")]
+[assembly: Guid("f623162c-ae82-42b1-886f-33d605cfe860")]
 
 // Version information for an assembly consists of the following four values:
 //

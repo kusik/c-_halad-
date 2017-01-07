@@ -17,6 +17,9 @@ namespace _03Service
             this.uow = unitOfWorks;
         }
 
+        public CategoryService() : this(new UnitOfWorks())
+        {}
+
         public  void Add(string name)
         {
             uow.CategoryRepository.Add(new Category() { Name=name });
@@ -30,7 +33,15 @@ namespace _03Service
             return exist;
         }
 
-       
+        public CategoryViewModel Find(int p0)
+        {
+            var cat= uow.CategoryRepository.Find(p0);
+            return new CategoryViewModel()
+            {
+                Id = cat.Id,
+                Name = cat.Name
 
+            };
+        }
     }
 }

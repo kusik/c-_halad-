@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoryServiceFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="CategoryServiceStepsGeneral.cs" />
     <Compile Include="CategoryServiceStepsUnitTests.cs" />
     <Compile Include="CategoryServiceStepsIntegration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +86,10 @@
     <ProjectReference Include="..\01Data.Tests\01Data.Tests.csproj">
       <Project>{551665ea-7113-4818-9da2-d8f986d28b53}</Project>
       <Name>01Data.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\01Data\01Data.csproj">
+      <Project>{27704C48-E31C-4E93-9F3C-6A3A4229BF3C}</Project>
+      <Name>01Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\02Repository.Tests\02Repository.Tests.csproj">
       <Project>{067456c0-086c-46a8-b37f-1405717b7bfc}</Project>

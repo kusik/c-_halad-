@@ -1,4 +1,4 @@
-﻿using _04WebApi.Model;
+﻿using _03Service;
 using Nancy;
 using Nancy.Hosting.Self;
 using Nancy.ModelBinding;
@@ -32,11 +32,36 @@ namespace _04WebApi
         {
             Get["/"] = _ => "Hello world, here is Nancy!";
 
-            Get["/Category/{Id}"] = x =>
-            {
-                var cat = this.Bind<CategoryViewModel>();
-                return Response.AsJson(cat);
-            };
+            Get["/Category/{Id}"] = CategoryGet;
+            Post["/Category/"] = CategoryPost;
+            Delete["/Category/{Id}"] = CategoryDelete;
         }
+        private dynamic CategoryGet(dynamic arg)
+        {
+            var catRequest = this.Bind<CategoryViewModel>();
+
+            var service = new CategoryService();
+            var catResponde = service.Find(catRequest.Id);
+
+            return Response.AsJson(catResponde);
+        }
+
+        private dynamic CategoryPost(dynamic arg)
+        {
+            var catRequest = this.Bind<CategoryViewModel>();
+
+            var service = new CategoryService();
+            service.Add(catRequest.Name);
+            var catResponde=catRequest.Message = "Sikeres feltöltés!";
+            return Response.AsJson(catResponde);
+            ;
+        }
+
+        private dynamic CategoryDelete(dynamic arg)
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }

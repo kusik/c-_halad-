@@ -23,7 +23,7 @@ namespace _02Repository
            
         }
 
-        public TEntity Find(params object[] keys)
+        public virtual TEntity Find(params object[] keys)
         {
            
                return db.Set<TEntity>().Find(keys);

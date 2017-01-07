@@ -78,6 +78,7 @@ namespace _02Repository.Tests
 
             mockCategoryRepository.Setup(rep => rep.Add(It.IsAny<Category>())).Callback<Category>(cat => listaCategory.Add(cat));
             mockCategoryRepository.Setup(rep => rep.IsExistByName(It.IsAny<string>())).Returns<string>(name => listaCategory.Any(x => x.Name==name));
+            mockCategoryRepository.Setup(set => set.Find(It.IsAny<object[]>())).Returns<object[]>(ids => listaCategory.Find(x => x.Id == (int)ids[0]));
 
 
 
