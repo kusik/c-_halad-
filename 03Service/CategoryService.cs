@@ -43,5 +43,25 @@ namespace _03Service
 
             };
         }
+
+        public ICollection<CategoryViewModel> FindAll()
+        {
+
+            var cat = uow.CategoryRepository.FindAll();
+            List<CategoryViewModel> list = new List<CategoryViewModel>();
+
+            foreach (var item in cat)
+                list.Add(new CategoryViewModel()
+                {
+                    Id = item.Id,
+                    Name = item.Name
+
+                }
+                );
+
+            return list;
+            
+           
+        }
     }
 }

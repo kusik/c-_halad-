@@ -53,5 +53,11 @@ namespace _02Repository
         {
             return db.Set<TEntity>().Any(e => e.Name == name);
         }
+
+        public IQueryable<TEntity> FindAll()
+        {
+            return db.Set<TEntity>();
+
+        }
     }
 }

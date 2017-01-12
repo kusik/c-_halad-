@@ -22,5 +22,14 @@ Példák:
 	| 'Category' | 'Name' | '3. új kategória' |  
 	| 'Category' | 'Name' | '4. új kategória' |  
 
+Forgatókönyv vázlat: WebApiCategoryGetAll
+	Adott egy böngésző
+	Ha meghívjuk ezt a címet: <url>
+	Akkor hiba nélkül lefut a kérés
+Példák: 
+	| url         |
+	| 'Category/' |
+
+
 
 

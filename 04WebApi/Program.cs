@@ -35,7 +35,19 @@ namespace _04WebApi
             Get["/Category/{Id}"] = CategoryGet;
             Post["/Category/"] = CategoryPost;
             Delete["/Category/{Id}"] = CategoryDelete;
+            Get["/Category/"] = CategoryGetAll;
+
         }
+
+        private dynamic CategoryGetAll(dynamic arg)
+        {
+            var service = new CategoryService();
+            var catResponde = service.FindAll();
+
+            return Response.AsJson(catResponde);
+
+        }
+
         private dynamic CategoryGet(dynamic arg)
         {
             var catRequest = this.Bind<CategoryViewModel>();

@@ -104,6 +104,24 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WebApiCategoryGetAll")]
+        [NUnit.Framework.TestCaseAttribute("\'Category/\'", new string[0])]
+        public virtual void WebApiCategoryGetAll(string url, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WebApiCategoryGetAll", exampleTags);
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 26
+ testRunner.Given("egy böngésző", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Adott ");
+#line 27
+ testRunner.When(string.Format("meghívjuk ezt a címet: {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Ha ");
+#line 28
+ testRunner.Then("hiba nélkül lefut a kérés", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Akkor ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
