@@ -1,4 +1,5 @@
-﻿using _01Data.Model;
+﻿using System;
+using _01Data.Model;
 using NUnit.Framework;
 
 namespace _02Repository.Tests
